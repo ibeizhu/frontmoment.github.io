@@ -87,8 +87,6 @@
 		        
 					<a class="rss" target="_blank" href="http://imoment.vip" title="rss"><i class="icon-rss"></i></a>
 		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
-		        
 					<a class="jianshu" target="_blank" href="http://www.jianshu.com/u/ff85571a55ff" title="jianshu"><i class="icon-jianshu"></i></a>
 		        
 					<a class="mail" target="_blank" href="mailto:frontmoment@sina.com" title="mail"><i class="icon-mail"></i></a>
@@ -134,8 +132,6 @@
 			        
 						<a class="rss" target="_blank" href="http://imoment.vip" title="rss"><i class="icon-rss"></i></a>
 			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
-			        
 						<a class="jianshu" target="_blank" href="http://www.jianshu.com/u/ff85571a55ff" title="jianshu"><i class="icon-jianshu"></i></a>
 			        
 						<a class="mail" target="_blank" href="mailto:frontmoment@sina.com" title="mail"><i class="icon-mail"></i></a>
@@ -166,6 +162,182 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-webstorm-vue" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/11/webstorm-vue/">webstorm-vue</a>
+    </h1>
+  
+
+        
+        <a href="/2016/11/11/webstorm-vue/" class="archive-article-date">
+  	<time datetime="2016-11-11T10:33:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Webstorm-Vue-es6报错解决方案"><a href="#Webstorm-Vue-es6报错解决方案" class="headerlink" title="Webstorm Vue es6报错解决方案"></a>Webstorm Vue es6报错解决方案</h2><p>Webstorm项目设置为Ecmascript6</p>
+<p>Webstorm安装Vuejs插件</p>
+<p>然后修改.vue文件中的script标签修改为如下格式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/babel&quot;&gt;</div></pre></td></tr></table></figure>
+<h3 id="如果你使用less的话-vue文件中的style标签修改为如下格式"><a href="#如果你使用less的话-vue文件中的style标签修改为如下格式" class="headerlink" title="如果你使用less的话,.vue文件中的style标签修改为如下格式"></a>如果你使用less的话,.vue文件中的style标签修改为如下格式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;style rel=&quot;stylesheet/less&quot; lang=&quot;less&quot; scoped&gt;</div></pre></td></tr></table></figure>
+<p>通过如上两个修改,可以友好的使用vue开发了</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">webstorm vue es6</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/11/11/webstorm-vue/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-vue-plugin" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/20/vue-plugin/">vue-plugin</a>
+    </h1>
+  
+
+        
+        <a href="/2016/10/20/vue-plugin/" class="archive-article-date">
+  	<time datetime="2016-10-20T10:39:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Vue-js插件书写规范"><a href="#Vue-js插件书写规范" class="headerlink" title="Vue.js插件书写规范"></a>Vue.js插件书写规范</h2><h1 id="Vue插件书写规范，导出一个带有install方法的对象"><a href="#Vue插件书写规范，导出一个带有install方法的对象" class="headerlink" title="Vue插件书写规范，导出一个带有install方法的对象"></a>Vue插件书写规范，导出一个带有install方法的对象</h1><p>使用时，可以通过官方写法将自定义插件挂载到Vue上面：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">import Vue from &apos;vue&apos;</div><div class="line">import YourPlugin from &apos;YourPlugin&apos;</div><div class="line">Vue.use(YourPlugin)</div></pre></td></tr></table></figure></p>
+<h1 id="闭包里导出一个带有install方法的对象"><a href="#闭包里导出一个带有install方法的对象" class="headerlink" title="闭包里导出一个带有install方法的对象"></a>闭包里导出一个带有install方法的对象</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">(function () &#123;</div><div class="line"></div><div class="line">   var YourPlugin = &#123;</div><div class="line">      install:function(Vue,options)&#123;</div><div class="line">        // todo your code,such as</div><div class="line">        // Vue.component(&apos;CustomComponent&apos;, CustomComponent)</div><div class="line">      &#125;</div><div class="line">   &#125;</div><div class="line">  // 这里为了支持CMD,AMD,CommonJs,以及script标签导入的方式</div><div class="line">  if (typeof exports == &quot;object&quot;) &#123;</div><div class="line">    module.exports = YourPlugin</div><div class="line">  &#125; else if (typeof define == &quot;function&quot; &amp;&amp; define.amd) &#123;</div><div class="line">    define([], function()&#123; return YourPlugin &#125;)</div><div class="line">  &#125; else if (window.Vue) &#123;</div><div class="line">    Vue.use(YourPlugin)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;)()</div></pre></td></tr></table></figure>
+<h4 id="至于为什么要这样写-为什么要导出install方法？相信大家肯定有疑问，这里摘录Vue源码的use方法-大家就能一目了然"><a href="#至于为什么要这样写-为什么要导出install方法？相信大家肯定有疑问，这里摘录Vue源码的use方法-大家就能一目了然" class="headerlink" title="至于为什么要这样写,为什么要导出install方法？相信大家肯定有疑问，这里摘录Vue源码的use方法,大家就能一目了然"></a>至于为什么要这样写,为什么要导出install方法？相信大家肯定有疑问，这里摘录Vue源码的use方法,大家就能一目了然</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">Vue.use = function (plugin) &#123;</div><div class="line">    /* istanbul ignore if */</div><div class="line">    if (plugin.installed) &#123;</div><div class="line">      return</div><div class="line">    &#125;</div><div class="line">    // additional parameters</div><div class="line">    var args = toArray(arguments, 1)</div><div class="line">    args.unshift(this)</div><div class="line">    if (typeof plugin.install === &apos;function&apos;) &#123;</div><div class="line">      plugin.install.apply(plugin, args)</div><div class="line">    &#125; else &#123;</div><div class="line">      plugin.apply(null, args)</div><div class="line">    &#125;</div><div class="line">    plugin.installed = true</div><div class="line">    return this</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<h4 id="当前后续最好将插件通过npm-publish发布到npm包里面，这样其他小伙伴就能通过以下方式直接安装了"><a href="#当前后续最好将插件通过npm-publish发布到npm包里面，这样其他小伙伴就能通过以下方式直接安装了" class="headerlink" title="当前后续最好将插件通过npm publish发布到npm包里面，这样其他小伙伴就能通过以下方式直接安装了"></a>当前后续最好将插件通过npm publish发布到npm包里面，这样其他小伙伴就能通过以下方式直接安装了</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install YourPlugin</div></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/10/20/vue-plugin/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-cheat" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/25/cheat/">cheat</a>
+    </h1>
+  
+
+        
+        <a href="/2016/09/25/cheat/" class="archive-article-date">
+  	<time datetime="2016-09-25T10:48:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-09-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="更好用的shell查询命令工具-cheat"><a href="#更好用的shell查询命令工具-cheat" class="headerlink" title="更好用的shell查询命令工具,cheat"></a>更好用的shell查询命令工具,cheat</h3><p>安装cheat(需要python环境)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install cheat</div></pre></td></tr></table></figure>
+<p>使用方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cheat ls</div></pre></td></tr></table></figure></p>
+<p>其他帮助命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">man ls</div></pre></td></tr></table></figure></p>
+<h3 id="为什么要使用cheat"><a href="#为什么要使用cheat" class="headerlink" title="为什么要使用cheat?"></a>为什么要使用cheat?</h3><p>相信每个人都用过 man 来查看某个命令的使用方法,<br>这个确实很全面,但是说明文字很长,而且看着很累,解释不言简意赅,<br>对于英语能力一般的人确实是个体力活<br>cheat使用更简短的语言描述,和实例来展示该命令的使用方式<br>比如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cheat ls</div></pre></td></tr></table></figure></p>
+<p>下面是ls命令的常用方式说明<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"># Displays everything in the target directory</div><div class="line">ls path/to/the/target/directory</div><div class="line"></div><div class="line"># Displays everything including hidden files</div><div class="line">ls -a</div><div class="line"></div><div class="line"># Displays all files, along with the size (with unit suffixes) and timestamp</div><div class="line">ls -lh</div><div class="line"></div><div class="line"># Display files, sorted by size</div><div class="line">ls -S</div><div class="line"></div><div class="line"># Display directories only</div><div class="line">ls -d */</div></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/09/25/cheat/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-new-blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -173,13 +345,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/05/new-blog/">new-blog</a>
+      <a class="article-title" href="/2016/04/05/new-blog/">new-blog</a>
     </h1>
   
 
         
-        <a href="/2017/04/05/new-blog/" class="archive-article-date">
-  	<time datetime="2017-04-05T10:19:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-05</time>
+        <a href="/2016/04/05/new-blog/" class="archive-article-date">
+  	<time datetime="2016-04-05T10:19:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-04-05</time>
 </a>
         
       </header>
@@ -210,66 +382,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/05/new-blog/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/05/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/05/hello-world/" class="archive-article-date">
-  	<time datetime="2017-04-05T08:59:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/05/hello-world/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/04/05/new-blog/">展开全文 >></a>
         </p>
       
 
@@ -374,6 +487,10 @@
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">webstorm vue es6</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">new blog</a>
