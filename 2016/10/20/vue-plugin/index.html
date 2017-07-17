@@ -8,17 +8,19 @@
   <link rel="dns-prefetch" href="http://imoment.vip">
   <title>vue-plugin | frontMoment blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Vue.js插件书写规范Vue插件书写规范，导出一个带有install方法的对象使用时，可以通过官方写法将自定义插件挂载到Vue上面：123import Vue from &amp;apos;vue&amp;apos;import YourPlugin from &amp;apos;YourPlugin&amp;apos;Vue.use(YourPlugin) 闭包里导出一个带有install方法的对象1234567891011">
-<meta name="keywords">
+  <meta name="description" content="Vue.js插件书写规范Vue插件书写规范，导出一个带有install方法的对象使用时，可以通过官方写法将自定义插件挂载到Vue上面：123import Vue from &amp;apos;vue&amp;apos;import YourPlugin from &amp;apos;YourPlugin&amp;apos;Vue.use(YourPlugin)
+闭包里导出一个带有install方法的对象1234567891011">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue-plugin">
 <meta property="og:url" content="http://imoment.vip/2016/10/20/vue-plugin/index.html">
 <meta property="og:site_name" content="frontMoment blog">
-<meta property="og:description" content="Vue.js插件书写规范Vue插件书写规范，导出一个带有install方法的对象使用时，可以通过官方写法将自定义插件挂载到Vue上面：123import Vue from &amp;apos;vue&amp;apos;import YourPlugin from &amp;apos;YourPlugin&amp;apos;Vue.use(YourPlugin) 闭包里导出一个带有install方法的对象1234567891011">
-<meta property="og:updated_time" content="2017-04-05T10:47:56.000Z">
+<meta property="og:description" content="Vue.js插件书写规范Vue插件书写规范，导出一个带有install方法的对象使用时，可以通过官方写法将自定义插件挂载到Vue上面：123import Vue from &amp;apos;vue&amp;apos;import YourPlugin from &amp;apos;YourPlugin&amp;apos;Vue.use(YourPlugin)
+闭包里导出一个带有install方法的对象1234567891011">
+<meta property="og:updated_time" content="2017-07-14T06:06:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue-plugin">
-<meta name="twitter:description" content="Vue.js插件书写规范Vue插件书写规范，导出一个带有install方法的对象使用时，可以通过官方写法将自定义插件挂载到Vue上面：123import Vue from &amp;apos;vue&amp;apos;import YourPlugin from &amp;apos;YourPlugin&amp;apos;Vue.use(YourPlugin) 闭包里导出一个带有install方法的对象1234567891011">
+<meta name="twitter:description" content="Vue.js插件书写规范Vue插件书写规范，导出一个带有install方法的对象使用时，可以通过官方写法将自定义插件挂载到Vue上面：123import Vue from &amp;apos;vue&amp;apos;import YourPlugin from &amp;apos;YourPlugin&amp;apos;Vue.use(YourPlugin)
+闭包里导出一个带有install方法的对象1234567891011">
   
     <link rel="alternative" href="/atom.xml" title="frontMoment blog" type="application/atom+xml">
   
@@ -57,7 +59,7 @@ var _hmt = _hmt || [];
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="/img/me.JPG" class="js-avatar">
+			<img src="/img/avatar.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">frontMoment</a></h1>
@@ -119,7 +121,7 @@ var _hmt = _hmt || [];
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="/img/me.JPG" class="js-avatar">
+				<img src="/img/avatar.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">frontMoment</h1>
@@ -190,10 +192,10 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Vue-js插件书写规范"><a href="#Vue-js插件书写规范" class="headerlink" title="Vue.js插件书写规范"></a>Vue.js插件书写规范</h2><h1 id="Vue插件书写规范，导出一个带有install方法的对象"><a href="#Vue插件书写规范，导出一个带有install方法的对象" class="headerlink" title="Vue插件书写规范，导出一个带有install方法的对象"></a>Vue插件书写规范，导出一个带有install方法的对象</h1><p>使用时，可以通过官方写法将自定义插件挂载到Vue上面：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">import Vue from &apos;vue&apos;</div><div class="line">import YourPlugin from &apos;YourPlugin&apos;</div><div class="line">Vue.use(YourPlugin)</div></pre></td></tr></table></figure></p>
-<h1 id="闭包里导出一个带有install方法的对象"><a href="#闭包里导出一个带有install方法的对象" class="headerlink" title="闭包里导出一个带有install方法的对象"></a>闭包里导出一个带有install方法的对象</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">(function () &#123;</div><div class="line"></div><div class="line">   var YourPlugin = &#123;</div><div class="line">      install:function(Vue,options)&#123;</div><div class="line">        // todo your code,such as</div><div class="line">        // Vue.component(&apos;CustomComponent&apos;, CustomComponent)</div><div class="line">      &#125;</div><div class="line">   &#125;</div><div class="line">  // 这里为了支持CMD,AMD,CommonJs,以及script标签导入的方式</div><div class="line">  if (typeof exports == &quot;object&quot;) &#123;</div><div class="line">    module.exports = YourPlugin</div><div class="line">  &#125; else if (typeof define == &quot;function&quot; &amp;&amp; define.amd) &#123;</div><div class="line">    define([], function()&#123; return YourPlugin &#125;)</div><div class="line">  &#125; else if (window.Vue) &#123;</div><div class="line">    Vue.use(YourPlugin)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;)()</div></pre></td></tr></table></figure>
-<h4 id="至于为什么要这样写-为什么要导出install方法？相信大家肯定有疑问，这里摘录Vue源码的use方法-大家就能一目了然"><a href="#至于为什么要这样写-为什么要导出install方法？相信大家肯定有疑问，这里摘录Vue源码的use方法-大家就能一目了然" class="headerlink" title="至于为什么要这样写,为什么要导出install方法？相信大家肯定有疑问，这里摘录Vue源码的use方法,大家就能一目了然"></a>至于为什么要这样写,为什么要导出install方法？相信大家肯定有疑问，这里摘录Vue源码的use方法,大家就能一目了然</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">Vue.use = function (plugin) &#123;</div><div class="line">    /* istanbul ignore if */</div><div class="line">    if (plugin.installed) &#123;</div><div class="line">      return</div><div class="line">    &#125;</div><div class="line">    // additional parameters</div><div class="line">    var args = toArray(arguments, 1)</div><div class="line">    args.unshift(this)</div><div class="line">    if (typeof plugin.install === &apos;function&apos;) &#123;</div><div class="line">      plugin.install.apply(plugin, args)</div><div class="line">    &#125; else &#123;</div><div class="line">      plugin.apply(null, args)</div><div class="line">    &#125;</div><div class="line">    plugin.installed = true</div><div class="line">    return this</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
-<h4 id="当前后续最好将插件通过npm-publish发布到npm包里面，这样其他小伙伴就能通过以下方式直接安装了"><a href="#当前后续最好将插件通过npm-publish发布到npm包里面，这样其他小伙伴就能通过以下方式直接安装了" class="headerlink" title="当前后续最好将插件通过npm publish发布到npm包里面，这样其他小伙伴就能通过以下方式直接安装了"></a>当前后续最好将插件通过npm publish发布到npm包里面，这样其他小伙伴就能通过以下方式直接安装了</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install YourPlugin</div></pre></td></tr></table></figure>
+        <h2 id="Vue-js插件书写规范"><a href="#Vue-js插件书写规范" class="headerlink" title="Vue.js插件书写规范"></a>Vue.js插件书写规范</h2><h1 id="Vue插件书写规范，导出一个带有install方法的对象"><a href="#Vue插件书写规范，导出一个带有install方法的对象" class="headerlink" title="Vue插件书写规范，导出一个带有install方法的对象"></a>Vue插件书写规范，导出一个带有install方法的对象</h1><p>使用时，可以通过官方写法将自定义插件挂载到Vue上面：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">import YourPlugin from &apos;YourPlugin&apos;</span><br><span class="line">Vue.use(YourPlugin)</span><br></pre></td></tr></table></figure></p>
+<h1 id="闭包里导出一个带有install方法的对象"><a href="#闭包里导出一个带有install方法的对象" class="headerlink" title="闭包里导出一个带有install方法的对象"></a>闭包里导出一个带有install方法的对象</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">(function () &#123;</span><br><span class="line"></span><br><span class="line">   var YourPlugin = &#123;</span><br><span class="line">      install:function(Vue,options)&#123;</span><br><span class="line">        // todo your code,such as</span><br><span class="line">        // Vue.component(&apos;CustomComponent&apos;, CustomComponent)</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">  // 这里为了支持CMD,AMD,CommonJs,以及script标签导入的方式</span><br><span class="line">  if (typeof exports == &quot;object&quot;) &#123;</span><br><span class="line">    module.exports = YourPlugin</span><br><span class="line">  &#125; else if (typeof define == &quot;function&quot; &amp;&amp; define.amd) &#123;</span><br><span class="line">    define([], function()&#123; return YourPlugin &#125;)</span><br><span class="line">  &#125; else if (window.Vue) &#123;</span><br><span class="line">    Vue.use(YourPlugin)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+<h4 id="至于为什么要这样写-为什么要导出install方法？相信大家肯定有疑问，这里摘录Vue源码的use方法-大家就能一目了然"><a href="#至于为什么要这样写-为什么要导出install方法？相信大家肯定有疑问，这里摘录Vue源码的use方法-大家就能一目了然" class="headerlink" title="至于为什么要这样写,为什么要导出install方法？相信大家肯定有疑问，这里摘录Vue源码的use方法,大家就能一目了然"></a>至于为什么要这样写,为什么要导出install方法？相信大家肯定有疑问，这里摘录Vue源码的use方法,大家就能一目了然</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Vue.use = function (plugin) &#123;</span><br><span class="line">    /* istanbul ignore if */</span><br><span class="line">    if (plugin.installed) &#123;</span><br><span class="line">      return</span><br><span class="line">    &#125;</span><br><span class="line">    // additional parameters</span><br><span class="line">    var args = toArray(arguments, 1)</span><br><span class="line">    args.unshift(this)</span><br><span class="line">    if (typeof plugin.install === &apos;function&apos;) &#123;</span><br><span class="line">      plugin.install.apply(plugin, args)</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      plugin.apply(null, args)</span><br><span class="line">    &#125;</span><br><span class="line">    plugin.installed = true</span><br><span class="line">    return this</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="当前后续最好将插件通过npm-publish发布到npm包里面，这样其他小伙伴就能通过以下方式直接安装了"><a href="#当前后续最好将插件通过npm-publish发布到npm包里面，这样其他小伙伴就能通过以下方式直接安装了" class="headerlink" title="当前后续最好将插件通过npm publish发布到npm包里面，这样其他小伙伴就能通过以下方式直接安装了"></a>当前后续最好将插件通过npm publish发布到npm包里面，这样其他小伙伴就能通过以下方式直接安装了</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install YourPlugin</span><br></pre></td></tr></table></figure>
       
 
       
@@ -286,18 +288,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2016/09/25/cheat/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/11/11/webstorm-vue/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          cheat
+          webstorm-vue
         
       </div>
     </a>
   
   
-    <a href="/2016/11/11/webstorm-vue/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">webstorm-vue</div>
+    <a href="/2016/09/25/cheat/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">cheat</div>
       <i class="icon-circle-right"></i>
     </a>
   
