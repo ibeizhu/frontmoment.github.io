@@ -170,6 +170,91 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-regexp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/28/regexp/">regexp</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/28/regexp/" class="archive-article-date">
+  	<time datetime="2017-08-28T02:03:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&quot;^&quot; ：^会匹配行或者字符串的起始位置，有时还会匹配整个文档的起始位置。 </span><br><span class="line"></span><br><span class="line">&quot;$&quot;  ：$会匹配行或字符串的结尾</span><br><span class="line"></span><br><span class="line">&quot;\b&quot; :不会消耗任何字符只匹配一个位置，常用于匹配单词边界 如 我想从字符串中&quot;This is Regex&quot;匹配单独的单词 &quot;is&quot; 正则就要写成 &quot;\bis\b&quot;  \b 不会匹配is 两边的字符，但它会识别is 两边是否为单词的边界 </span><br><span class="line"></span><br><span class="line">&quot;\d&quot;: 匹配数字,例如要匹配一个固定格式的电话号码以0开头前4位后7位，如0737-5686123  正则:^0\d\d\d-\d\d\d\d\d\d\d$ 这里只是为了介绍&quot;\d&quot;字符，实际上有更好的写法会在     下面介绍。</span><br><span class="line"></span><br><span class="line">&quot;\w&quot;：匹配字母，数字，下划线.例如我要匹配&quot;a2345BCD__TTz&quot; 正则：&quot;\w+&quot;  这里的&quot;+&quot;字符为一个量词指重复的次数，稍后会详细介绍。</span><br><span class="line"></span><br><span class="line">&quot;\s&quot;：匹配空格 ,例如字符 &quot;a b c&quot; 正则：&quot;\w\s\w\s\w&quot;  一个字符后跟一个空格，如有字符间有多个空格直接把&quot;\s&quot; 写成 &quot;\s+&quot; 让空格重复</span><br><span class="line"></span><br><span class="line">&quot;.&quot;：匹配除了换行符以外的任何字符</span><br><span class="line"></span><br><span class="line">&quot;[abc]&quot;: 字符组  匹配包含括号内元素的字符</span><br></pre></td></tr></table></figure>
+<h3 id="反义词"><a href="#反义词" class="headerlink" title="反义词"></a>反义词</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">写法很简单改成大写就行了，意思与原来的相反，这里就不举例子了</span><br><span class="line"></span><br><span class="line">   &quot;\W&quot;   匹配任意不是字母，数字，下划线 的字符</span><br><span class="line"></span><br><span class="line">   &quot;\S&quot;   匹配任意不是空白符的字符</span><br><span class="line"></span><br><span class="line">　&quot;\D&quot;  匹配任意非数字的字符</span><br><span class="line"></span><br><span class="line">   &quot;\B&quot;  匹配不是单词开头或结束的位置</span><br><span class="line"></span><br><span class="line">   &quot;[^abc]&quot;  匹配除了abc以外的任意字符</span><br></pre></td></tr></table></figure>
+<h3 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h3><p>　　先解释关于量词所涉及到的重要的三个概念</p>
+<pre><code>贪婪(贪心) 如&quot;*&quot;字符 贪婪量词会首先匹配整个字符串，尝试匹配时，它会选定尽可能多的内容，如果 失败则回退一个字符，然后再次尝试回退的过程就叫做回溯，它会每次回退一个字符，直到找到匹配的内容或者没有字符可以回退。相比下面两种贪婪量词对资源的消耗是最大的，
+</code></pre><p>   懒惰(勉强) 如 “?”  懒惰量词使用另一种方式匹配，它从目标的起始位置开始尝试匹配，每次检查一个字符，并寻找它要匹配的内容，如此循环直到字符结尾处。</p>
+<p>   占有  如”+” 占有量词会覆盖事个目标字符串，然后尝试寻找匹配内容 ，但它只尝试一次，不会回溯，就好比先抓一把石头，然后从石头中挑出黄金</p>
+<pre><code>&quot;*&quot;(贪婪)   重复零次或更多
+</code></pre><p>　　　  例如”aaaaaaaa” 匹配字符串中所有的a  正则： “a*”   会出到所有的字符”a”</p>
+<pre><code>&quot;+&quot;(懒惰)   重复一次或更多次
+</code></pre><p>　　     例如”aaaaaaaa” 匹配字符串中所有的a  正则： “a+”  会取到字符中所有的a字符，  “a+”与”a<em>“不同在于”+”至少是一次而”</em>“ 可以是0次，</p>
+<p>　　     稍后会与”?”字符结合来体现这种区别</p>
+<pre><code>&quot;?&quot;(占有)   重复零次或一次
+</code></pre><p>　　     例如”aaaaaaaa” 匹配字符串中的a 正则 ： “a?” 只会匹配一次，也就是结果只是单个字符a</p>
+<p>　  “{n}”  重复n次</p>
+<p>　　     例如从”aaaaaaaa” 匹配字符串的a 并重复3次 正则：  “a{3}”  结果就是取到3个a字符  “aaa”;</p>
+<p>　  “{n,m}”  重复n到m次</p>
+<p>　　     例如正则 “a{3,4}” 将a重复匹配3次或者4次 所以供匹配的字符可以是三个”aaa”也可以是四个”aaaa” 正则都可以匹配到</p>
+<pre><code>&quot;{n,}&quot;  重复n次或更多次
+</code></pre><p> 　　    与{n,m}不同之处就在于匹配的次数将没有上限，但至少要重复n次 如 正则”a{3,}” a至少要重复3次</p>
+<p> 把量词了解了之后之前匹配电话号码的正则现在就可以改得简单点了^0\d\d\d-\d\d\d\d\d\d\d可以改为”0\d+−\d7可以改为”0\d+−\d7”。</p>
+<p>这样写还不够完美如果因为前面的区号没有做限定，以至于可以输入很多们，而通常只能是3位或者4位，</p>
+<p>现在再改一下 “^0\d{2,3}-\d{7}”如此一来区号部分就可以匹配3位或者4位的了</p>
+<h3 id="懒惰限定符"><a href="#懒惰限定符" class="headerlink" title="懒惰限定符"></a>懒惰限定符</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&quot;*?&quot;   重复任意次，但尽可能少重复 </span><br><span class="line"></span><br><span class="line">　　    如 &quot;acbacb&quot;  正则  &quot;a.*?b&quot; 只会取到第一个&quot;acb&quot; 原本可以全部取到但加了限定符后，只会匹配尽可能少的字符 ，而&quot;acbacb&quot;最少字符的结果就是&quot;acb&quot; </span><br><span class="line"></span><br><span class="line">　　&quot;+?&quot;  重复1次或更多次，但尽可能少重复</span><br><span class="line"></span><br><span class="line">　　   与上面一样，只是至少要重复1次</span><br><span class="line"></span><br><span class="line">　　&quot;??&quot;  重复0次或1次，但尽可能少重复</span><br><span class="line"></span><br><span class="line">　　    如 &quot;aaacb&quot; 正则 &quot;a.??b&quot; 只会取到最后的三个字符&quot;acb&quot;</span><br><span class="line"></span><br><span class="line">　　&quot;&#123;n,m&#125;?&quot;  重复n到m次，但尽可能少重复</span><br><span class="line"></span><br><span class="line">          如 &quot;aaaaaaaa&quot;  正则 &quot;a&#123;0,m&#125;&quot; 因为最少是0次所以取到结果为空</span><br><span class="line"></span><br><span class="line">　　&quot;&#123;n,&#125;?&quot;    重复n次以上，但尽可能少重复</span><br><span class="line"></span><br><span class="line">          如 &quot;aaaaaaa&quot;  正则 &quot;a&#123;1,&#125;&quot; 最少是1次所以取到结果为 &quot;a&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="捕获分组"><a href="#捕获分组" class="headerlink" title="捕获分组"></a>捕获分组</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&quot;(exp)&quot;    匹配exp,并捕获文本到自动命名的组里</span><br><span class="line"></span><br><span class="line">&quot;(?&lt;name&gt;exp)&quot;   匹配exp,并捕获文本到名称为name的组里</span><br><span class="line"></span><br><span class="line">&quot;(?:exp)&quot;  匹配exp,不捕获匹配的文本，也不给此分组分配组号</span><br></pre></td></tr></table></figure>
+<h3 id="零宽断言"><a href="#零宽断言" class="headerlink" title="零宽断言"></a>零宽断言</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&quot;(?=exp)&quot;  匹配exp前面的位置</span><br><span class="line"></span><br><span class="line">　　如 &quot;How are you doing&quot; 正则&quot;(?&lt;txt&gt;.+(?=ing))&quot; 这里取ing前所有的字符，并定义了一个捕获分组名字为 &quot;txt&quot; 而&quot;txt&quot;这个组里的值为&quot;How are you do&quot;;</span><br><span class="line"></span><br><span class="line">&quot;(?&lt;=exp)&quot;  匹配exp后面的位置</span><br><span class="line"></span><br><span class="line">　　如 &quot;How are you doing&quot; 正则&quot;(?&lt;txt&gt;(?&lt;=How).+)&quot; 这里取&quot;How&quot;之后所有的字符，并定义了一个捕获分组名字为 &quot;txt&quot; 而&quot;txt&quot;这个组里的值为&quot; are you doing&quot;;</span><br><span class="line"></span><br><span class="line">&quot;(?!exp)&quot;  匹配后面跟的不是exp的位置</span><br><span class="line"></span><br><span class="line">　　如 &quot;123abc&quot; 正则 &quot;\d&#123;3&#125;(?!\d)&quot;匹配3位数字后非数字的结果</span><br><span class="line"></span><br><span class="line">&quot;(?&lt;!exp)&quot;  匹配前面不是exp的位置</span><br><span class="line"></span><br><span class="line">　　如 &quot;abc123 &quot; 正则 &quot;(?&lt;![0-9])123&quot; 匹配&quot;123&quot;前面是非数字的结果也可写成&quot;(?!&lt;\d)123&quot;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">正则表达式 RegExp</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/28/regexp/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-webpack-module" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -742,68 +827,10 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-new-blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/05/new-blog/">new-blog</a>
-    </h1>
-  
-
-        
-        <a href="/2016/04/05/new-blog/" class="archive-article-date">
-  	<time datetime="2016-04-05T10:19:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-04-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Good news,新的Blog诞生,以后坚持写博客,分享技术,学习技术,better and better</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">new blog</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/04/05/new-blog/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
@@ -893,6 +920,10 @@ var _hmt = _hmt || [];
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git diff</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">charles mobile proxy mac</a>
               </li>
              
@@ -901,7 +932,7 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git diff</a>
+                <a href="javascript:void(0)" class="js-tag color3">正则表达式 RegExp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -913,11 +944,11 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">webpack module module.exports 内存分配</a>
+                <a href="javascript:void(0)" class="js-tag color2">webstorm vue es6</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">webstorm vue es6</a>
+                <a href="javascript:void(0)" class="js-tag color5">webpack module module.exports 内存分配</a>
               </li>
             
             <div class="clearfix"></div>
