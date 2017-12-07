@@ -16,7 +16,7 @@ ssh 安全加密原理客户端通常使用非常安全的密码（不太安全�
 <meta property="og:site_name" content="frontMoment blog">
 <meta property="og:description" content="ssh好文SSH Essentials: Working with SSH Servers, Clients, and KeysSSH要领：用SSH服务器，客户机和Keys工作SSH免密码登录
 ssh 安全加密原理客户端通常使用非常安全的密码（不太安全，不推荐）或SSH密钥进行身份验证。 密码登录是加密的，对新用户来说很容易理解。然而，自动机器人和恶意用户经常会反复尝试对允许基于密码登录的帐户进行">
-<meta property="og:updated_time" content="2017-12-07T02:28:21.000Z">
+<meta property="og:updated_time" content="2017-12-07T02:44:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ssh安全协议">
 <meta name="twitter:description" content="ssh好文SSH Essentials: Working with SSH Servers, Clients, and KeysSSH要领：用SSH服务器，客户机和Keys工作SSH免密码登录
@@ -198,6 +198,8 @@ var _hmt = _hmt || [];
 <h3 id="登录远程服务器"><a href="#登录远程服务器" class="headerlink" title="登录远程服务器"></a>登录远程服务器</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh root@100.100.100.100   // ssh默认端口是 22</span><br><span class="line">ssh root@100.100.100.100 -p 3000    // 指定端口</span><br><span class="line">ssh -i ~/.ssh/yun root@100.100.100.100  // 指定公钥，默认使用id_rsa</span><br></pre></td></tr></table></figure>
 <h3 id="复制本地公钥到服务器"><a href="#复制本地公钥到服务器" class="headerlink" title="复制本地公钥到服务器"></a>复制本地公钥到服务器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh root@100.100.100.100 &quot;mkdir .ssh;chmod 0700 .ssh&quot;</span><br><span class="line">scp ~/.ssh/id_rsa.pub root@172.24.253.2:.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
 <h3 id="ssh-调试"><a href="#ssh-调试" class="headerlink" title="ssh 调试"></a>ssh 调试</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@100.100.100.100 -vvv</span><br></pre></td></tr></table></figure>
+<h3 id="ssh-agent-ssh-add"><a href="#ssh-agent-ssh-add" class="headerlink" title="ssh-agent ssh-add"></a>ssh-agent ssh-add</h3><p>ssh-agent 是用于管理SSH private keys的, 长时间持续运行的守护进程（daemon）. 唯一目的就是对解密的私钥进行高速缓存。<br>ssh-add 提示并将用户的使用的私钥添加到由ssh-agent 维护的列表中. 此后, 当使用公钥连接到远程 SSH 或 SCP 主机时,不再提示相关信息.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-add ~/.ssh/yun</span><br></pre></td></tr></table></figure></p>
+
       
 
       
@@ -419,15 +421,11 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">new blog</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">mysql pm2 thinkjs pm2 kill</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ssh ssh-keygen</a>
+                <a href="javascript:void(0)" class="js-tag color4">new blog</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -435,11 +433,15 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">webstorm vue es6</a>
+                <a href="javascript:void(0)" class="js-tag color5">ssh ssh-keygen</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">webpack module module.exports 内存分配</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">webstorm vue es6</a>
               </li>
             
             <div class="clearfix"></div>
