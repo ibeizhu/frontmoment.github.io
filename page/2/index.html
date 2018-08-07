@@ -9,11 +9,13 @@
   <title>frontMoment blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="passion &amp; patient">
+<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
 <meta property="og:type" content="website">
 <meta property="og:title" content="frontMoment blog">
 <meta property="og:url" content="http://imoment.vip/page/2/index.html">
 <meta property="og:site_name" content="frontMoment blog">
 <meta property="og:description" content="passion &amp; patient">
+<meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="frontMoment blog">
 <meta name="twitter:description" content="passion &amp; patient">
@@ -170,6 +172,115 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-vue-plugin" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/20/vue-plugin/">vue-plugin</a>
+    </h1>
+  
+
+        
+        <a href="/2016/10/20/vue-plugin/" class="archive-article-date">
+  	<time datetime="2016-10-20T10:39:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Vue-js插件书写规范"><a href="#Vue-js插件书写规范" class="headerlink" title="Vue.js插件书写规范"></a>Vue.js插件书写规范</h2><h1 id="Vue插件书写规范，导出一个带有install方法的对象"><a href="#Vue插件书写规范，导出一个带有install方法的对象" class="headerlink" title="Vue插件书写规范，导出一个带有install方法的对象"></a>Vue插件书写规范，导出一个带有install方法的对象</h1><p>使用时，可以通过官方写法将自定义插件挂载到Vue上面：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">import YourPlugin from &apos;YourPlugin&apos;</span><br><span class="line">Vue.use(YourPlugin)</span><br></pre></td></tr></table></figure></p>
+<h1 id="闭包里导出一个带有install方法的对象"><a href="#闭包里导出一个带有install方法的对象" class="headerlink" title="闭包里导出一个带有install方法的对象"></a>闭包里导出一个带有install方法的对象</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">(function () &#123;</span><br><span class="line"></span><br><span class="line">   var YourPlugin = &#123;</span><br><span class="line">      install:function(Vue,options)&#123;</span><br><span class="line">        // todo your code,such as</span><br><span class="line">        // Vue.component(&apos;CustomComponent&apos;, CustomComponent)</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">  // 这里为了支持CMD,AMD,CommonJs,以及script标签导入的方式</span><br><span class="line">  if (typeof exports == &quot;object&quot;) &#123;</span><br><span class="line">    module.exports = YourPlugin</span><br><span class="line">  &#125; else if (typeof define == &quot;function&quot; &amp;&amp; define.amd) &#123;</span><br><span class="line">    define([], function()&#123; return YourPlugin &#125;)</span><br><span class="line">  &#125; else if (window.Vue) &#123;</span><br><span class="line">    Vue.use(YourPlugin)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+<h4 id="至于为什么要这样写-为什么要导出install方法？相信大家肯定有疑问，这里摘录Vue源码的use方法-大家就能一目了然"><a href="#至于为什么要这样写-为什么要导出install方法？相信大家肯定有疑问，这里摘录Vue源码的use方法-大家就能一目了然" class="headerlink" title="至于为什么要这样写,为什么要导出install方法？相信大家肯定有疑问，这里摘录Vue源码的use方法,大家就能一目了然"></a>至于为什么要这样写,为什么要导出install方法？相信大家肯定有疑问，这里摘录Vue源码的use方法,大家就能一目了然</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Vue.use = function (plugin) &#123;</span><br><span class="line">    /* istanbul ignore if */</span><br><span class="line">    if (plugin.installed) &#123;</span><br><span class="line">      return</span><br><span class="line">    &#125;</span><br><span class="line">    // additional parameters</span><br><span class="line">    var args = toArray(arguments, 1)</span><br><span class="line">    args.unshift(this)</span><br><span class="line">    if (typeof plugin.install === &apos;function&apos;) &#123;</span><br><span class="line">      plugin.install.apply(plugin, args)</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      plugin.apply(null, args)</span><br><span class="line">    &#125;</span><br><span class="line">    plugin.installed = true</span><br><span class="line">    return this</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="当前后续最好将插件通过npm-publish发布到npm包里面，这样其他小伙伴就能通过以下方式直接安装了"><a href="#当前后续最好将插件通过npm-publish发布到npm包里面，这样其他小伙伴就能通过以下方式直接安装了" class="headerlink" title="当前后续最好将插件通过npm publish发布到npm包里面，这样其他小伙伴就能通过以下方式直接安装了"></a>当前后续最好将插件通过npm publish发布到npm包里面，这样其他小伙伴就能通过以下方式直接安装了</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install YourPlugin</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/10/20/vue-plugin/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-cheat" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/25/cheat/">cheat</a>
+    </h1>
+  
+
+        
+        <a href="/2016/09/25/cheat/" class="archive-article-date">
+  	<time datetime="2016-09-25T10:48:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-09-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="更好用的shell查询命令工具-cheat"><a href="#更好用的shell查询命令工具-cheat" class="headerlink" title="更好用的shell查询命令工具,cheat"></a>更好用的shell查询命令工具,cheat</h3><p>安装cheat(需要python环境)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install cheat</span><br></pre></td></tr></table></figure>
+<p>使用方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cheat ls</span><br></pre></td></tr></table></figure></p>
+<p>其他帮助命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">man ls</span><br></pre></td></tr></table></figure></p>
+<h3 id="为什么要使用cheat"><a href="#为什么要使用cheat" class="headerlink" title="为什么要使用cheat?"></a>为什么要使用cheat?</h3><p>相信每个人都用过 man 来查看某个命令的使用方法,<br>这个确实很全面,但是说明文字很长,而且看着很累,解释不言简意赅,<br>对于英语能力一般的人确实是个体力活<br>cheat使用更简短的语言描述,和实例来展示该命令的使用方式<br>比如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cheat ls</span><br></pre></td></tr></table></figure></p>
+<p>下面是ls命令的常用方式说明<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># Displays everything in the target directory</span><br><span class="line">ls path/to/the/target/directory</span><br><span class="line"></span><br><span class="line"># Displays everything including hidden files</span><br><span class="line">ls -a</span><br><span class="line"></span><br><span class="line"># Displays all files, along with the size (with unit suffixes) and timestamp</span><br><span class="line">ls -lh</span><br><span class="line"></span><br><span class="line"># Display files, sorted by size</span><br><span class="line">ls -S</span><br><span class="line"></span><br><span class="line"># Display directories only</span><br><span class="line">ls -d */</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/09/25/cheat/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-git-tips" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -197,7 +308,7 @@ var _hmt = _hmt || [];
 <h3 id="二、删除-git-add-文件"><a href="#二、删除-git-add-文件" class="headerlink" title="二、删除 git add 文件"></a>二、删除 git add 文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git add abc.js</span><br><span class="line"></span><br><span class="line">git rm --cached abc.js</span><br><span class="line"></span><br><span class="line">git add .</span><br><span class="line"></span><br><span class="line">git rm --cached .</span><br></pre></td></tr></table></figure>
 <h3 id="三、解决本地多个ssh-key问题"><a href="#三、解决本地多个ssh-key问题" class="headerlink" title="三、解决本地多个ssh-key问题"></a>三、解决本地多个ssh-key问题</h3><h4 id="为github配置新的key-，取名为github"><a href="#为github配置新的key-，取名为github" class="headerlink" title="为github配置新的key ，取名为github"></a>为github配置新的key ，取名为github</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">~/.ssh$ ssh-keygen -t rsa -C &quot;xxx@gmail.com&quot; -f ~/.ssh/github</span><br><span class="line"></span><br><span class="line">~/.ssh$ ls</span><br><span class="line"></span><br><span class="line">github github.pub id_rsa id_rsa.pub known_hosts</span><br></pre></td></tr></table></figure>
 <h4 id="其中默认的是id-rsa"><a href="#其中默认的是id-rsa" class="headerlink" title="其中默认的是id_rsa"></a>其中默认的是id_rsa</h4><h3 id="四、Existing-folder-or-Git-repository"><a href="#四、Existing-folder-or-Git-repository" class="headerlink" title="四、Existing folder or Git repository"></a>四、Existing folder or Git repository</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd existing_folder</span><br><span class="line">git init</span><br><span class="line">git remote add origin git@xxxxxx:xxx/xxxx.git</span><br><span class="line">git add .</span><br><span class="line">git commit</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-<p>最后推荐大家使用一个更好的提交工具<br><a href="https://github.com/carloscuesta/gitmoji" target="_blank" rel="external">gitmoji</a> 和<br><a href="https://github.com/commitizen/cz-cli" target="_blank" rel="external">git cz</a><br>安装方法参考这个地址<br>git cz 和 gitmoji规范了提交文件的流程,填写更友好的commit信息,方便做code review</p>
+<p>最后推荐大家使用一个更好的提交工具<br><a href="https://github.com/carloscuesta/gitmoji" target="_blank" rel="noopener">gitmoji</a> 和<br><a href="https://github.com/commitizen/cz-cli" target="_blank" rel="noopener">git cz</a><br>安装方法参考这个地址<br>git cz 和 gitmoji规范了提交文件的流程,填写更友好的commit信息,方便做code review</p>
 
       
 
@@ -304,7 +415,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 frontMoment
+    		&copy; 2018 frontMoment
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -400,6 +511,10 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">new blog</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
               </li>
              
               <li class="article-tag-list-item">

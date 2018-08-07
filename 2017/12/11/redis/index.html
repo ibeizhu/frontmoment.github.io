@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://imoment.vip">
-  <title>mysql-pm2 | frontMoment blog</title>
+  <title>redis | frontMoment blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="关于新服务器的系统迁移最近购买了腾讯云服务器，正在把之前的搬瓦工上面的系统逐渐迁移到新服务器上，其中涉及到基于thinkjs的数据迁移 1.第一步，首先将老服务器上面的mysql数据库导出，保证数据的同步1mysqldump -u root -p root --databases moment.db &amp;gt;/root/project/data.sql 2.在新系统安装mysql,使用yum安装1">
-<meta name="keywords" content="mysql pm2 thinkjs pm2 kill">
+  <meta name="description" content="1brew install redis ����񣬱���Ĭ�϶�63791redis-server ����redis�ͻ���1redis-cli ��������123keys &amp;apos;**&amp;apos;set yourKey yourValget yourKey">
+<meta name="keywords" content="redis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mysql-pm2">
-<meta property="og:url" content="http://imoment.vip/2017/05/12/mysql-pm2/index.html">
+<meta property="og:title" content="redis">
+<meta property="og:url" content="http://imoment.vip/2017/12/11/redis/index.html">
 <meta property="og:site_name" content="frontMoment blog">
-<meta property="og:description" content="关于新服务器的系统迁移最近购买了腾讯云服务器，正在把之前的搬瓦工上面的系统逐渐迁移到新服务器上，其中涉及到基于thinkjs的数据迁移 1.第一步，首先将老服务器上面的mysql数据库导出，保证数据的同步1mysqldump -u root -p root --databases moment.db &amp;gt;/root/project/data.sql 2.在新系统安装mysql,使用yum安装1">
+<meta property="og:description" content="1brew install redis ����񣬱���Ĭ�϶�63791redis-server ����redis�ͻ���1redis-cli ��������123keys &amp;apos;**&amp;apos;set yourKey yourValget yourKey">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2017-07-14T06:06:37.000Z">
+<meta property="og:updated_time" content="2017-12-11T13:53:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mysql-pm2">
-<meta name="twitter:description" content="关于新服务器的系统迁移最近购买了腾讯云服务器，正在把之前的搬瓦工上面的系统逐渐迁移到新服务器上，其中涉及到基于thinkjs的数据迁移 1.第一步，首先将老服务器上面的mysql数据库导出，保证数据的同步1mysqldump -u root -p root --databases moment.db &amp;gt;/root/project/data.sql 2.在新系统安装mysql,使用yum安装1">
+<meta name="twitter:title" content="redis">
+<meta name="twitter:description" content="1brew install redis ����񣬱���Ĭ�϶�63791redis-server ����redis�ͻ���1redis-cli ��������123keys &amp;apos;**&amp;apos;set yourKey yourValget yourKey">
   
     <link rel="alternative" href="/atom.xml" title="frontMoment blog" type="application/atom+xml">
   
@@ -171,31 +171,30 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-mysql-pm2" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-redis" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      mysql-pm2
+      redis
     </h1>
   
 
         
-        <a href="/2017/05/12/mysql-pm2/" class="archive-article-date">
-  	<time datetime="2017-05-12T11:20:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-12</time>
+        <a href="/2017/12/11/redis/" class="archive-article-date">
+  	<time datetime="2017-12-11T13:50:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="关于新服务器的系统迁移"><a href="#关于新服务器的系统迁移" class="headerlink" title="关于新服务器的系统迁移"></a>关于新服务器的系统迁移</h2><p>最近购买了腾讯云服务器，正在把之前的搬瓦工上面的系统逐渐迁移到新服务器上，其中涉及到基于thinkjs的数据迁移</p>
-<h4 id="1-第一步，首先将老服务器上面的mysql数据库导出，保证数据的同步"><a href="#1-第一步，首先将老服务器上面的mysql数据库导出，保证数据的同步" class="headerlink" title="1.第一步，首先将老服务器上面的mysql数据库导出，保证数据的同步"></a>1.第一步，首先将老服务器上面的mysql数据库导出，保证数据的同步</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -u root -p root --databases moment.db &gt;/root/project/data.sql</span><br></pre></td></tr></table></figure>
-<h4 id="2-在新系统安装mysql-使用yum安装"><a href="#2-在新系统安装mysql-使用yum安装" class="headerlink" title="2.在新系统安装mysql,使用yum安装"></a>2.在新系统安装mysql,使用yum安装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install mysql-server mysql</span><br></pre></td></tr></table></figure>
-<h4 id="3-登录mysql-导入刚刚导出的数据文件data-sql"><a href="#3-登录mysql-导入刚刚导出的数据文件data-sql" class="headerlink" title="3.登录mysql,导入刚刚导出的数据文件data.sql"></a>3.登录mysql,导入刚刚导出的数据文件data.sql</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br><span class="line">source /root/project/data.sql</span><br></pre></td></tr></table></figure>
-<h4 id="4-以上步骤已经完成了数据库的数据同步，最后基于pm2发布服务"><a href="#4-以上步骤已经完成了数据库的数据同步，最后基于pm2发布服务" class="headerlink" title="4.以上步骤已经完成了数据库的数据同步，最后基于pm2发布服务"></a>4.以上步骤已经完成了数据库的数据同步，最后基于pm2发布服务</h4><p>这里我遇到了一个小坑，因为换了个服务器，然后我的项目文件目录路径和之前有了改变，而我项目的pm2.json<br>文件的cwd指向了之前的老目录，导致 pm2 start pm2.json时访问页面一直502，之后使用pm2 show命令查看了error log,<br>发现一直报错”ENOENT: no such file or directory, uv_chdir”. 其实就是pm2的启动服务的js文件找不到，发现<br>问题之后，使用pm2 stop,然后pm2 start pm2.json还是不行，后来使用pm2 kill杀掉进程，在执行pm2 start pm2.json大功告成。</p>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install redis</span><br></pre></td></tr></table></figure>
+<p>����񣬱���Ĭ�϶�6379<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server</span><br></pre></td></tr></table></figure></p>
+<p>����redis�ͻ���<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli</span><br></pre></td></tr></table></figure></p>
+<p>��������<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">keys &apos;**&apos;</span><br><span class="line">set yourKey yourVal</span><br><span class="line">get yourKey</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -230,7 +229,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">mysql pm2 thinkjs pm2 kill</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">redis</a>
         		</li>
       		
 		</ul>
@@ -286,7 +285,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://imoment.vip/2017/05/12/mysql-pm2/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://imoment.vip/2017/12/11/redis/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -300,18 +299,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2017/07/16/webpack-module/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/08/07/house-debt/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          webpack-module
+          house-debt
         
       </div>
     </a>
   
   
-    <a href="/2017/05/09/git-diff/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">git-diff</div>
+    <a href="/2017/12/07/ssh/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ssh安全协议</div>
       <i class="icon-circle-right"></i>
     </a>
   

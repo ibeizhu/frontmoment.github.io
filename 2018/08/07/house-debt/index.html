@@ -6,20 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://imoment.vip">
-  <title>mysql-pm2 | frontMoment blog</title>
+  <title>house-debt | frontMoment blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="关于新服务器的系统迁移最近购买了腾讯云服务器，正在把之前的搬瓦工上面的系统逐渐迁移到新服务器上，其中涉及到基于thinkjs的数据迁移 1.第一步，首先将老服务器上面的mysql数据库导出，保证数据的同步1mysqldump -u root -p root --databases moment.db &amp;gt;/root/project/data.sql 2.在新系统安装mysql,使用yum安装1">
-<meta name="keywords" content="mysql pm2 thinkjs pm2 kill">
+  <meta name="description" content="组合贷款条件：89方房子 + 首付3成商业贷款 + 公积金50万贷款 计算单位：万元 商业贷款利率上浮20% 3.2万  89方 商业贷款总额(万元) = 3.2*89 - 50 - 3.2*89*0.3 = 149.363.0万  89方 商业贷款总额(万元) = 3*89 - 50 - 3*89*0.3 = 136.92.8万  89方 商业贷款总额(万元) = 2.8*89 - 50 - 2">
+<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mysql-pm2">
-<meta property="og:url" content="http://imoment.vip/2017/05/12/mysql-pm2/index.html">
+<meta property="og:title" content="house-debt">
+<meta property="og:url" content="http://imoment.vip/2018/08/07/house-debt/index.html">
 <meta property="og:site_name" content="frontMoment blog">
-<meta property="og:description" content="关于新服务器的系统迁移最近购买了腾讯云服务器，正在把之前的搬瓦工上面的系统逐渐迁移到新服务器上，其中涉及到基于thinkjs的数据迁移 1.第一步，首先将老服务器上面的mysql数据库导出，保证数据的同步1mysqldump -u root -p root --databases moment.db &amp;gt;/root/project/data.sql 2.在新系统安装mysql,使用yum安装1">
+<meta property="og:description" content="组合贷款条件：89方房子 + 首付3成商业贷款 + 公积金50万贷款 计算单位：万元 商业贷款利率上浮20% 3.2万  89方 商业贷款总额(万元) = 3.2*89 - 50 - 3.2*89*0.3 = 149.363.0万  89方 商业贷款总额(万元) = 3*89 - 50 - 3*89*0.3 = 136.92.8万  89方 商业贷款总额(万元) = 2.8*89 - 50 - 2">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2017-07-14T06:06:37.000Z">
+<meta property="og:image" content="https://img.alicdn.com/tfs/TB1UkARci6guuRjy1XdXXaAwpXa-750-1334.png">
+<meta property="og:image" content="https://img.alicdn.com/tfs/TB1ytGHJuuSBuNjy1XcXXcYjFXa-750-1334.png">
+<meta property="og:image" content="https://img.alicdn.com/tfs/TB1A7ARci6guuRjy1XdXXaAwpXa-750-1334.png">
+<meta property="og:image" content="https://img.alicdn.com/tfs/TB1oAARci6guuRjy1XdXXaAwpXa-750-1334.png">
+<meta property="og:image" content="https://img.alicdn.com/tfs/TB1ikARci6guuRjy1XdXXaAwpXa-750-1334.png">
+<meta property="og:image" content="https://img.alicdn.com/tfs/TB1eUoTci6guuRjy1XdXXaAwpXa-750-1334.png">
+<meta property="og:updated_time" content="2018-08-07T04:29:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mysql-pm2">
-<meta name="twitter:description" content="关于新服务器的系统迁移最近购买了腾讯云服务器，正在把之前的搬瓦工上面的系统逐渐迁移到新服务器上，其中涉及到基于thinkjs的数据迁移 1.第一步，首先将老服务器上面的mysql数据库导出，保证数据的同步1mysqldump -u root -p root --databases moment.db &amp;gt;/root/project/data.sql 2.在新系统安装mysql,使用yum安装1">
+<meta name="twitter:title" content="house-debt">
+<meta name="twitter:description" content="组合贷款条件：89方房子 + 首付3成商业贷款 + 公积金50万贷款 计算单位：万元 商业贷款利率上浮20% 3.2万  89方 商业贷款总额(万元) = 3.2*89 - 50 - 3.2*89*0.3 = 149.363.0万  89方 商业贷款总额(万元) = 3*89 - 50 - 3*89*0.3 = 136.92.8万  89方 商业贷款总额(万元) = 2.8*89 - 50 - 2">
+<meta name="twitter:image" content="https://img.alicdn.com/tfs/TB1UkARci6guuRjy1XdXXaAwpXa-750-1334.png">
   
     <link rel="alternative" href="/atom.xml" title="frontMoment blog" type="application/atom+xml">
   
@@ -171,32 +178,36 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-mysql-pm2" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-house-debt" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      mysql-pm2
+      house-debt
     </h1>
   
 
         
-        <a href="/2017/05/12/mysql-pm2/" class="archive-article-date">
-  	<time datetime="2017-05-12T11:20:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-12</time>
+        <a href="/2018/08/07/house-debt/" class="archive-article-date">
+  	<time datetime="2018-08-07T04:29:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="关于新服务器的系统迁移"><a href="#关于新服务器的系统迁移" class="headerlink" title="关于新服务器的系统迁移"></a>关于新服务器的系统迁移</h2><p>最近购买了腾讯云服务器，正在把之前的搬瓦工上面的系统逐渐迁移到新服务器上，其中涉及到基于thinkjs的数据迁移</p>
-<h4 id="1-第一步，首先将老服务器上面的mysql数据库导出，保证数据的同步"><a href="#1-第一步，首先将老服务器上面的mysql数据库导出，保证数据的同步" class="headerlink" title="1.第一步，首先将老服务器上面的mysql数据库导出，保证数据的同步"></a>1.第一步，首先将老服务器上面的mysql数据库导出，保证数据的同步</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -u root -p root --databases moment.db &gt;/root/project/data.sql</span><br></pre></td></tr></table></figure>
-<h4 id="2-在新系统安装mysql-使用yum安装"><a href="#2-在新系统安装mysql-使用yum安装" class="headerlink" title="2.在新系统安装mysql,使用yum安装"></a>2.在新系统安装mysql,使用yum安装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install mysql-server mysql</span><br></pre></td></tr></table></figure>
-<h4 id="3-登录mysql-导入刚刚导出的数据文件data-sql"><a href="#3-登录mysql-导入刚刚导出的数据文件data-sql" class="headerlink" title="3.登录mysql,导入刚刚导出的数据文件data.sql"></a>3.登录mysql,导入刚刚导出的数据文件data.sql</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br><span class="line">source /root/project/data.sql</span><br></pre></td></tr></table></figure>
-<h4 id="4-以上步骤已经完成了数据库的数据同步，最后基于pm2发布服务"><a href="#4-以上步骤已经完成了数据库的数据同步，最后基于pm2发布服务" class="headerlink" title="4.以上步骤已经完成了数据库的数据同步，最后基于pm2发布服务"></a>4.以上步骤已经完成了数据库的数据同步，最后基于pm2发布服务</h4><p>这里我遇到了一个小坑，因为换了个服务器，然后我的项目文件目录路径和之前有了改变，而我项目的pm2.json<br>文件的cwd指向了之前的老目录，导致 pm2 start pm2.json时访问页面一直502，之后使用pm2 show命令查看了error log,<br>发现一直报错”ENOENT: no such file or directory, uv_chdir”. 其实就是pm2的启动服务的js文件找不到，发现<br>问题之后，使用pm2 stop,然后pm2 start pm2.json还是不行，后来使用pm2 kill杀掉进程，在执行pm2 start pm2.json大功告成。</p>
-
+        <p>组合贷款条件：89方房子 + 首付3成商业贷款 + 公积金50万贷款</p>
+<p>计算单位：万元</p>
+<p>商业贷款利率上浮20%</p>
+<h2 id="3-2万-89方"><a href="#3-2万-89方" class="headerlink" title="3.2万  89方"></a>3.2万  89方</h2><p><img src="https://img.alicdn.com/tfs/TB1UkARci6guuRjy1XdXXaAwpXa-750-1334.png" alt="32"></p>
+<h3 id="商业贷款总额-万元-3-2-89-50-3-2-89-0-3-149-36"><a href="#商业贷款总额-万元-3-2-89-50-3-2-89-0-3-149-36" class="headerlink" title="商业贷款总额(万元) = 3.2*89 - 50 - 3.2*89*0.3 = 149.36"></a><strong>商业贷款总额(万元) = <code>3.2*89 - 50 - 3.2*89*0.3 = 149.36</code></strong></h3><h2 id="3-0万-89方"><a href="#3-0万-89方" class="headerlink" title="3.0万  89方"></a>3.0万  89方</h2><p><img src="https://img.alicdn.com/tfs/TB1ytGHJuuSBuNjy1XcXXcYjFXa-750-1334.png" alt="30"></p>
+<h3 id="商业贷款总额-万元-3-89-50-3-89-0-3-136-9"><a href="#商业贷款总额-万元-3-89-50-3-89-0-3-136-9" class="headerlink" title="商业贷款总额(万元) = 3*89 - 50 - 3*89*0.3 = 136.9"></a><strong>商业贷款总额(万元) = <code>3*89 - 50 - 3*89*0.3 = 136.9</code></strong></h3><h2 id="2-8万-89方"><a href="#2-8万-89方" class="headerlink" title="2.8万  89方"></a>2.8万  89方</h2><p><img src="https://img.alicdn.com/tfs/TB1A7ARci6guuRjy1XdXXaAwpXa-750-1334.png" alt="28"></p>
+<h3 id="商业贷款总额-万元-2-8-89-50-2-8-89-0-3-124-44"><a href="#商业贷款总额-万元-2-8-89-50-2-8-89-0-3-124-44" class="headerlink" title="商业贷款总额(万元) = 2.8*89 - 50 - 2.8*89*0.3 = 124.44"></a><strong>商业贷款总额(万元) = <code>2.8*89 - 50 - 2.8*89*0.3 = 124.44</code></strong></h3><h2 id="2-5万-89方"><a href="#2-5万-89方" class="headerlink" title="2.5万  89方"></a>2.5万  89方</h2><p><img src="https://img.alicdn.com/tfs/TB1oAARci6guuRjy1XdXXaAwpXa-750-1334.png" alt="25"></p>
+<h3 id="商业贷款总额-万元-2-5-89-50-2-5-89-0-3-105-75"><a href="#商业贷款总额-万元-2-5-89-50-2-5-89-0-3-105-75" class="headerlink" title="商业贷款总额(万元) = 2.5*89 - 50 - 2.5*89*0.3 = 105.75"></a><strong>商业贷款总额(万元) = <code>2.5*89 - 50 - 2.5*89*0.3 = 105.75</code></strong></h3><h2 id="2-2万-89方"><a href="#2-2万-89方" class="headerlink" title="2.2万  89方"></a>2.2万  89方</h2><p><img src="https://img.alicdn.com/tfs/TB1ikARci6guuRjy1XdXXaAwpXa-750-1334.png" alt="22"></p>
+<h3 id="商业贷款总额-万元-2-2-89-50-2-2-89-0-3-87-06"><a href="#商业贷款总额-万元-2-2-89-50-2-2-89-0-3-87-06" class="headerlink" title="商业贷款总额(万元) = 2.2*89 - 50 - 2.2*89*0.3 = 87.06"></a><strong>商业贷款总额(万元) = <code>2.2*89 - 50 - 2.2*89*0.3 = 87.06</code></strong></h3><h2 id="2-0万-89方"><a href="#2-0万-89方" class="headerlink" title="2.0万  89方"></a>2.0万  89方</h2><p><img src="https://img.alicdn.com/tfs/TB1eUoTci6guuRjy1XdXXaAwpXa-750-1334.png" alt="22"></p>
+<h3 id="商业贷款总额-万元-2-0-89-50-2-0-89-0-3-74-6"><a href="#商业贷款总额-万元-2-0-89-50-2-0-89-0-3-74-6" class="headerlink" title="商业贷款总额(万元) = 2.0*89 - 50 - 2.0*89*0.3 = 74.6"></a><strong>商业贷款总额(万元) = <code>2.0*89 - 50 - 2.0*89*0.3 = 74.6</code></strong></h3>
       
 
       
@@ -225,17 +236,6 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">mysql pm2 thinkjs pm2 kill</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -286,7 +286,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://imoment.vip/2017/05/12/mysql-pm2/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://imoment.vip/2018/08/07/house-debt/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -300,18 +300,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2017/07/16/webpack-module/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          webpack-module
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/05/09/git-diff/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">git-diff</div>
+    <a href="/2017/12/11/redis/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">redis</div>
       <i class="icon-circle-right"></i>
     </a>
   
